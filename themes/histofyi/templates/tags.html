@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% set nav="tags" %}
+
+{% block title %}tags{% endblock %}
+
+{% block content %}
+<section class="vertical-spacing-top">
+    <div class="grid-container">
+        <div class="column-full-width">
+            <div class="inner">
+                <h1 class="vertical-spacing-bottom">Tags</h1>
+                {% for tag, articles in tags | sort %}
+                    <div>{{tag.name}} | {{ articles|count }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

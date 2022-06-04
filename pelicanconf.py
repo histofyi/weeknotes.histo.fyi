@@ -2,12 +2,11 @@
 # -*- coding: utf-8 -*- #
 
 AUTHOR = 'Christopher Thorpe'
-SITENAME = 'histo.fyi — weeknotes'
-#SITEURL = 'https://weeknotes.histo.fyi'
-SITEURL = ''
+SITENAME = 'histo.fyi | weeknotes'
+SITEURL = 'https://weeknotes.histo.fyi'
 
 PATH = 'content'
-THEME = 'theme'
+THEME = 'themes/histofyi'
 
 TIMEZONE = 'Europe/London'
 
@@ -20,13 +19,12 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-#LINKS = ()
-
-# Social widget
-#SOCIAL = ()
+TAG_URL = 'tags/{slug}'
+TAGS_URL = 'tag'
 
 DEFAULT_PAGINATION = 10
+
+DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

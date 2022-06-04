@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+<section class="vertical-spacing-top">
+    <div class="grid-container">
+        <div class="column-full-width">
+            <div class="inner">
+                <h1 class="vertical-spacing-bottom">Welcome to Weeknotes</h1>
+                <p>
+                    To help keep momentum, and to keep working in the open, I'm trying to write weeknotes each week. Since this is a part time project, some weeknotes might be more sparse than others.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+  
+
+{% for article in articles %}
+    <section class="vertical-spacing-top-0-5">
+        <div class="grid-container">
+            <div class="column-full-width">
+                <div class="inner top-border">
+                    <h2 class="heading-medium vertical-spacing-bottom-0-25 vertical-spacing-top-0-5"><a href="/{{ article.slug }}.html">{{ article.title }}</a></h2>
+                    <div class="body-copy-small vertical-spacing-bottom-0-5">Posted on <strong>{{ article.locale_date }}</strong></div>
+                    <div class="vertical-spacing-bottom-0-25">{{ article.content|truncate(200, False, '...', 0) }}</div>
+                    <div class="body-copy-small vertical-spacing-bottom"><strong>Tags:</strong>
+                        {% for tag in article.tags %}
+                        <a href="/tag/{{tag.name}}">{{ tag.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endfor %}
+
+{% endblock %}
